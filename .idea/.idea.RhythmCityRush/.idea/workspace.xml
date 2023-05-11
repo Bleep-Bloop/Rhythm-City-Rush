@@ -5,11 +5,7 @@
     <projectFile>Intermediate/ProjectFiles/UE5.vcxproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="169e494c-e87b-474e-ad8f-0e024472a3d5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/PlayerCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/PlayerCharacter.h" afterDir="false" />
-    </list>
+    <list default="true" id="169e494c-e87b-474e-ad8f-0e024472a3d5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,7 +150,7 @@
       <option name="presentableId" value="Default" />
       <updated>1683764241863</updated>
       <workItem from="1683764243501" duration="1000" />
-      <workItem from="1683764577674" duration="574000" />
+      <workItem from="1683764577674" duration="1431000" />
     </task>
     <servers />
   </component>
