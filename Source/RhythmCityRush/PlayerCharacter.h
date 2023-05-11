@@ -11,6 +11,17 @@ class RHYTHMCITYRUSH_API APlayerCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
+	// Note: The skeletal Mesh and Anim Blueprint references on the Mesh Component (inherited from Character)
+	// are set in the derived Blueprint asset named BP_PlayerCharacter (to avoid direct content references in C++).
+	
+	// Camera Boom positioning the camera behind the character
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	class USpringArmComponent* CameraBoom;
+
+	// Follow Camera
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	class UCameraComponent* FollowCamera;
+
 public:
 	// Sets default values for this character's properties
 	APlayerCharacter();
