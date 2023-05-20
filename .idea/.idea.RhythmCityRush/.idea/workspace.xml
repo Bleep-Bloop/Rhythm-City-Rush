@@ -6,14 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="169e494c-e87b-474e-ad8f-0e024472a3d5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP_PlayerCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/IMC_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Input/IMC_PlayerCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/InputActions/IA_Look.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Input/InputActions/IA_Look.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/PlayerCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/PlayerCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/RhythmCityRush.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/RhythmCityRush.Build.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +159,7 @@
       <workItem from="1683768128903" duration="2456000" />
       <workItem from="1683771705455" duration="1904000" />
       <workItem from="1684534764943" duration="1479000" />
-      <workItem from="1684589100330" duration="2876000" />
+      <workItem from="1684589100330" duration="3508000" />
     </task>
     <servers />
   </component>

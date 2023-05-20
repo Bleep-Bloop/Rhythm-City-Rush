@@ -7,8 +7,6 @@
 #include "Engine/LocalPlayer.h"
 #include "GameFramework/PlayerController.h"
 #include "GameFramework/SpringArmComponent.h"
-#include "RhythmCityRushGameModeBase.h"
-#include "RhythmCityRushGameModeBase.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "Components/InputComponent.h"
@@ -43,7 +41,6 @@ APlayerCharacter::APlayerCharacter()
 	GetCharacterMovement()->BrakingDecelerationWalking = 0; // ToDo: Check hover note in the inspector under CharacterMovement. Interesting stuff in there
 	GetCharacterMovement()->bUseSeparateBrakingFriction = true; // BrakingFriction will be used to stop character ToDo: Look into more
 	
-	
 	// Create a Camera Boom (pulls in towards player if there is a collision).
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("Camera Boom"));
 	CameraBoom->SetupAttachment(RootComponent);
@@ -64,8 +61,6 @@ APlayerCharacter::APlayerCharacter()
 void APlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-
-	
 	
 	// Add Input Mapping Context
 	if(APlayerController* PlayerController = Cast<APlayerController>(Controller))
@@ -107,9 +102,7 @@ void APlayerCharacter::Move(const FInputActionValue& Value)
 			AddMovementInput(RightDirection, MovementVector.X);
 			GetCharacterMovement()->BrakingDecelerationWalking = 0;
 		}
-		
 	}
-
 	
 }
 
@@ -132,7 +125,6 @@ void APlayerCharacter::Look(const FInputActionValue& Value)
 void APlayerCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 // Called to bind functionality to input
@@ -152,7 +144,6 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &APlayerCharacter::Look);
-		
 	}
 
 }
