@@ -44,7 +44,7 @@ APlayerCharacter::APlayerCharacter()
 	// Create a Camera Boom (pulls in towards player if there is a collision).
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("Camera Boom"));
 	CameraBoom->SetupAttachment(RootComponent);
-	CameraBoom->TargetArmLength = 400.0f; // Distance the camera follows behind the player.
+	CameraBoom->TargetArmLength = 700.0f; // Distance the camera follows behind the player.
 	CameraBoom->bUsePawnControlRotation = true; // Rotate the arm based on the controller (Question: How will this deal with movement when camera is rotated?).
 
 	// Create the Follow Camera
