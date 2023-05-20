@@ -115,6 +115,15 @@ void APlayerCharacter::Move(const FInputActionValue& Value)
 
 void APlayerCharacter::Look(const FInputActionValue& Value)
 {
+
+	// Input is a Vector2D
+	FVector2D LookAxisVector = Value.Get<FVector2D>();
+
+	if(Controller != nullptr)
+	{
+		// Add Yaw and Pitch Input to Controller
+		AddControllerPitchInput(LookAxisVector.Y); 
+		AddControllerYawInput(LookAxisVector.X);
 	}
 	
 }
