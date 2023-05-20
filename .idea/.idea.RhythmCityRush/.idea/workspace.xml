@@ -5,11 +5,23 @@
     <projectFile>Intermediate/ProjectFiles/UE5.vcxproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="169e494c-e87b-474e-ad8f-0e024472a3d5" name="Changes" comment="" />
+    <list default="true" id="169e494c-e87b-474e-ad8f-0e024472a3d5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP_PlayerCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Input/IMC_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Input/IMC_PlayerCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Input/InputActions/IA_Look.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Input/InputActions/IA_Look.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/PlayerCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/PlayerCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/RhythmCityRush.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/RhythmCityRush.Build.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.2/Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -19,14 +31,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="C++ Project.RhythmCityRush">
     <configuration name="RhythmCityRush" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -150,7 +162,11 @@
       <option name="presentableId" value="Default" />
       <updated>1683764241863</updated>
       <workItem from="1683764243501" duration="1000" />
-      <workItem from="1683764577674" duration="1431000" />
+      <workItem from="1683764577674" duration="2503000" />
+      <workItem from="1683768128903" duration="2456000" />
+      <workItem from="1683771705455" duration="1904000" />
+      <workItem from="1684534764943" duration="1479000" />
+      <workItem from="1684589100330" duration="2876000" />
     </task>
     <servers />
   </component>
