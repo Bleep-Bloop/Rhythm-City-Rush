@@ -80,6 +80,37 @@ void APlayerCharacter::BeginPlay()
 
 void APlayerCharacter::Move(const FInputActionValue& Value)
 {
+
+	// Input is a Vector2D
+	FVector2D MovementVector = Value.Get<FVector2D>();
+	
+	if(Controller != nullptr)
+	{
+		// Find out which way is forward
+		const FRotator Rotation = Controller->GetControlRotation();
+		const FRotator  YawRotation(0, Rotation.Yaw, 0);
+
+		// Get Forward Vector
+		const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+
+		// Get Right Vector
+		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+		
+		if(MovementVector.Y < 0)
+		{
+			// Increase to bring character to a stop when pulled back
+			GetCharacterMovement()->BrakingDecelerationWalking = 1500;
+		}
+		else
+		{
+			AddMovementInput(ForwardDirection, MovementVector.Y);
+			AddMovementInput(RightDirection, MovementVector.X);
+			GetCharacterMovement()->BrakingDecelerationWalking = 0;
+		}
+		
+	}
+
+	
 }
 
 void APlayerCharacter::Look(const FInputActionValue& Value)
