@@ -40,6 +40,9 @@ APlayerCharacter::APlayerCharacter()
 	GetCharacterMovement()->GroundFriction = 0;
 	GetCharacterMovement()->BrakingDecelerationWalking = 0; // ToDo: Check hover note in the inspector under CharacterMovement. Interesting stuff in there
 	GetCharacterMovement()->bUseSeparateBrakingFriction = true; // BrakingFriction will be used to stop character ToDo: Look into more
+
+	// Jump Control Properties
+	GetCharacterMovement()->AirControl = 0.1f; // ToDo: Play with adding more control
 	
 	// Create a Camera Boom (pulls in towards player if there is a collision).
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("Camera Boom"));
