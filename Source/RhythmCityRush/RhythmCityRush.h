@@ -4,3 +4,6 @@
 
 #include "CoreMinimal.h"
 
+// Character Classes
+class ARhythmCityRushCharacter;
+class URCRCharacterMovementComponent;
