@@ -5,14 +5,17 @@
 
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "RCRCharacterMovementComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
-// Sets default values
-ARhythmCityRushCharacter::ARhythmCityRushCharacter()
+ARhythmCityRushCharacter::ARhythmCityRushCharacter(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer.SetDefaultSubobjectClass<URCRCharacterMovementComponent>(ACharacter::CharacterMovementComponentName))
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	RCRCharacterMovementComponent = Cast<URCRCharacterMovementComponent>(GetCharacterMovement());
+	
 	// Configure character movement
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f);
@@ -83,7 +86,7 @@ void ARhythmCityRushCharacter::Move(const FInputActionValue& Value)
 	
 	// Input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
-	
+
 	if(Controller != nullptr)
 	{
 		// Find out which way is forward
@@ -125,13 +128,15 @@ void ARhythmCityRushCharacter::Look(const FInputActionValue& Value)
 	
 }
 
-void ARhythmCityRushCharacter::Jump()
+FCollisionQueryParams ARhythmCityRushCharacter::GetIgnoreCharacterParams() const
 {
-	Super::Jump();
-}
+	FCollisionQueryParams Params;
 
-void ARhythmCityRushCharacter::StopJumping()
-{
-	Super::StopJumping();
+	TArray<AActor*> CharacterChildren;
+	GetAllChildActors(CharacterChildren);
+	Params.AddIgnoredActors(CharacterChildren);
+	Params.AddIgnoredActor(this);
+
+	return Params;
 }
 
