@@ -94,7 +94,6 @@ void ARhythmCityRushCharacter::Move(const FInputActionValue& Value)
 	
 	// Input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
-	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Black, FString::Printf(TEXT("X: %f, Y %f"),  MovementVector.X, MovementVector.Y));
 	
 	if(Controller != nullptr)
 	{
