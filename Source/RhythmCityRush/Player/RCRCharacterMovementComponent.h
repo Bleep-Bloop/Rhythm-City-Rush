@@ -7,6 +7,8 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "RCRCharacterMovementComponent.generated.h"
 
+// NOTE - WallRide can only be used on objects tagged 'WallRidable'
+
 UENUM(BlueprintType)
 enum ECustomMovementMode
 {
