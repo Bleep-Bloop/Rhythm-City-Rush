@@ -145,13 +145,13 @@ bool URCRCharacterMovementComponent::TryWallRide()
 
 	// Left Cast
 	GetWorld()->LineTraceSingleByProfile(WallHit, Start, LeftEnd, "BlockAll", Params);
-	if(WallHit.IsValidBlockingHit() && (Velocity | WallHit.Normal) < 0)
+	if(WallHit.IsValidBlockingHit() && (Velocity | WallHit.Normal) < 0 && WallHit.GetComponent()->ComponentHasTag("WallRidable"))
 		bWallRideIsRight = false;
 	// Right Cast
 	else
 	{
 		GetWorld()->LineTraceSingleByProfile(WallHit, Start, RightEnd, "BlockAll", Params);
-		if(WallHit.IsValidBlockingHit() && (Velocity | WallHit.Normal) < 0)
+		if(WallHit.IsValidBlockingHit() && (Velocity | WallHit.Normal) < 0 && WallHit.GetComponent()->ComponentHasTag("WallRidable"))
 			bWallRideIsRight = true;
 		else
 			return false;
@@ -197,10 +197,10 @@ void URCRCharacterMovementComponent::PhysWallRide(float deltaTime, int32 Iterati
 		FVector End = bWallRideIsRight ? Start + CastDelta : Start - CastDelta;
 		auto Params = RCRCharacterOwner->GetIgnoreCharacterParams();
 		float SinPullAwayAngle = FMath::Sin(FMath::DegreesToRadians(WallRidePullAwayAngle));
-		FHitResult WalLHit;
-		GetWorld()->LineTraceSingleByProfile(WalLHit, Start, End, "BlockAll", Params);
-		bool bWantsToPullAway = WalLHit.IsValidBlockingHit() && !Acceleration.IsNearlyZero() && (Acceleration.GetSafeNormal() | WalLHit.Normal) > SinPullAwayAngle;
-		if(!WalLHit.IsValidBlockingHit() || bWantsToPullAway)
+		FHitResult WallHit;
+		GetWorld()->LineTraceSingleByProfile(WallHit, Start, End, "BlockAll", Params);
+		bool bWantsToPullAway = WallHit.IsValidBlockingHit() && !Acceleration.IsNearlyZero() && (Acceleration.GetSafeNormal() | WallHit.Normal) > SinPullAwayAngle;
+		if(!WallHit.IsValidBlockingHit() || bWantsToPullAway || !WallHit.GetComponent()->ComponentHasTag("WallRidable"))
 		{
 			SetMovementMode(MOVE_Falling);
 			StartNewPhysics(RemainingTime, Iterations);
@@ -208,12 +208,12 @@ void URCRCharacterMovementComponent::PhysWallRide(float deltaTime, int32 Iterati
 		}
 		
 		// Clamp Acceleration
-		Acceleration = FVector::VectorPlaneProject(Acceleration, WalLHit.Normal);
+		Acceleration = FVector::VectorPlaneProject(Acceleration, WallHit.Normal);
 		Acceleration.Z = 0.0f;
 
 		// Apply Acceleration
 		CalcVelocity(timeTick, 0.0f, false, GetMaxBrakingDeceleration());
-		Velocity = FVector::VectorPlaneProject(Velocity, WalLHit.Normal);
+		Velocity = FVector::VectorPlaneProject(Velocity, WallHit.Normal);
 		float TangentAccel = Acceleration.GetSafeNormal() | Velocity.GetSafeNormal2D();
 		bool bVelUp = Velocity.Z > 0.0f;
 		Velocity.Z += GetGravityZ() * WallRideGravityScaleCurve->GetFloatValue(bVelUp ? 0.0f : TangentAccel) * timeTick;
@@ -233,7 +233,7 @@ void URCRCharacterMovementComponent::PhysWallRide(float deltaTime, int32 Iterati
 		{
 			FHitResult Hit;
 			SafeMoveUpdatedComponent(Delta, UpdatedComponent->GetComponentQuat(), true, Hit);
-			FVector WallAttractionDelta = -WalLHit.Normal * WallAttractionForce * timeTick;
+			FVector WallAttractionDelta = -WallHit.Normal * WallAttractionForce * timeTick;
 			SafeMoveUpdatedComponent(WallAttractionDelta, UpdatedComponent->GetComponentQuat(), true, Hit);
 		}
 		if(UpdatedComponent->GetComponentLocation() == OldLocation)
