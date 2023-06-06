@@ -18,7 +18,7 @@ ARhythmCityRushCharacter::ARhythmCityRushCharacter(const FObjectInitializer& Obj
 	
 	// Configure character movement
 	GetCharacterMovement()->bOrientRotationToMovement = true; 
-	GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f); /
+	GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f);
 
 	GetCharacterMovement()->MaxWalkSpeed = 500.f; 
 	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
@@ -94,7 +94,8 @@ void ARhythmCityRushCharacter::Move(const FInputActionValue& Value)
 	
 	// Input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
-
+	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Black, FString::Printf(TEXT("X: %f, Y %f"),  MovementVector.X, MovementVector.Y));
+	
 	if(Controller != nullptr)
 	{
 		// Find out which way is forward
@@ -106,8 +107,9 @@ void ARhythmCityRushCharacter::Move(const FInputActionValue& Value)
 
 		// Get Right Vector
 		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
-		
-		if(MovementVector.Y < 0)
+
+		// If the player pulls the thumbstick back increase braking.
+		if(MovementVector.Y < -0.95)
 		{
 			// Increase to bring character to a stop when pulled back
 			GetCharacterMovement()->BrakingDecelerationWalking = 1500;
