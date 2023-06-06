@@ -14,6 +14,7 @@ enum ECustomMovementMode
 {
 	CMOVE_None		UMETA(Hidden),
 	CMOVE_WallRide	UMETA(DisplayName = "Wall Ride"),
+	CMOVE_Grind		UMETA(DisplayName = "Grinding"),
 	CMOVE_MAX		UMETA(Hidden),
 };
 
@@ -25,7 +26,7 @@ class RHYTHMCITYRUSH_API URCRCharacterMovementComponent : public UCharacterMovem
 
 	// Wall Ride Properties
 	UPROPERTY(EditDefaultsOnly) float MinWallRideSpeed = 200.f;			// Minimum speed to begin a wall ride.
-	UPROPERTY(EditDefaultsOnly) float MaxWallRideSpeed = 800.f;			// Max speed the wall can be riden at. ?/??wowrdin!
+	UPROPERTY(EditDefaultsOnly) float MaxWallRideSpeed = 800.f;			// Max speed of a wall ride.
 	UPROPERTY(EditDefaultsOnly) float MaxVerticalWallRideSpeed = 200.f; 
 	UPROPERTY(EditDefaultsOnly) float WallRidePullAwayAngle = 75;		// When the player input pulls away from the wall at this angle they exit.
 	UPROPERTY(EditDefaultsOnly) float WallAttractionForce = 200.f;		// Force pulling the player into the wall.
