@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Components/BoxComponent.h"
 #include "GameFramework/Actor.h"
 #include "TaggableActor.generated.h"
 
@@ -22,5 +23,17 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	UPROPERTY(EditDefaultsOnly, Category = Components)
+	UStaticMeshComponent* StaticMeshComponent;
+
+	UPROPERTY(EditAnywhere, Category = Components)
+	UBoxComponent* TagZoneTrigger;
+
+	UPROPERTY(EditAnywhere, Category = Components)
+	UDecalComponent* TagDecalComponent;
+
+	UFUNCTION()
+	void OnOverlapBegin(class AActor* OverlappedActor, class AActor* OtherActor);
 
 };
