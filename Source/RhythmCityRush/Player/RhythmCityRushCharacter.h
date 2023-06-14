@@ -47,6 +47,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* LookAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	class UInputAction* TagAction;
 	
 	// Called for Movement Input
 	void Move(const FInputActionValue& Value);
@@ -58,6 +61,8 @@ protected:
 	
 	UPROPERTY()
 	bool bCanMove;
+
+	void Tag();
 	
 public:
 

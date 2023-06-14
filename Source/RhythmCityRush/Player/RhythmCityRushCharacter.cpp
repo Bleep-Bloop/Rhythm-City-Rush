@@ -69,6 +69,11 @@ void ARhythmCityRushCharacter::BeginPlay()
 	
 }
 
+void ARhythmCityRushCharacter::Tag()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, "TAG");
+}
+
 // Called every frame
 void ARhythmCityRushCharacter::Tick(float DeltaTime)
 {
@@ -93,6 +98,9 @@ void ARhythmCityRushCharacter::SetupPlayerInputComponent(UInputComponent* Player
 
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ARhythmCityRushCharacter::Look);
+
+		// Tagging
+		EnhancedInputComponent->BindAction(TagAction, ETriggerEvent::Triggered, this, &ARhythmCityRushCharacter::Tag);
 	}
 
 }
