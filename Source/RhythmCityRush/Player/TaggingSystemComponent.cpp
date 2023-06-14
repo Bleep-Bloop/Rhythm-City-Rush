@@ -10,7 +10,7 @@ UTaggingSystemComponent::UTaggingSystemComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	// ...
+
 }
 
 
@@ -18,8 +18,6 @@ UTaggingSystemComponent::UTaggingSystemComponent()
 void UTaggingSystemComponent::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// ...
 	
 }
 
@@ -29,6 +27,12 @@ void UTaggingSystemComponent::TickComponent(float DeltaTime, ELevelTick TickType
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	// ...
+}
+
+void UTaggingSystemComponent::TryTag(FHitResult TagHitResult)
+{
+	
+	//	ADecalActor* Decal = GetWorld()->SpawnActor<ADecalActor>(Hit)
+	//https://forums.unrealengine.com/t/how-to-spawn-a-decal-in-c/419838
 }
 

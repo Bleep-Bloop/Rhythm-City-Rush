@@ -24,9 +24,15 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	UPROPERTY(EditAnywhere, Category = "Graffiti")
+	UPROPERTY(EditAnywhere, Category = Graffiti)
 	UMaterialInterface* TagDecalToSpawn;
 
-	
+	void TryTag(FHitResult TagHitResult);
+
+	// Distance the raycast will travel to look for a surface. 
+	UPROPERTY(EditAnywhere, Category = Graffiti)
+	float TagDistance;
+
+	// ToDo: Friend Class - Player
 	
 };
