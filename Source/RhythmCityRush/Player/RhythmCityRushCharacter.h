@@ -8,6 +8,7 @@
 #include "../RhythmCityRush.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/SpringArmComponent.h"
+//#include "RhythmCityRush/InteractableEnvironment/GrindControllerComponent.h"
 #include "RhythmCityRushCharacter.generated.h"
 
 UCLASS()
@@ -17,7 +18,7 @@ class RHYTHMCITYRUSH_API ARhythmCityRushCharacter : public ACharacter
 
 protected:
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Movement)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Movement)
 	URCRCharacterMovementComponent* RCRCharacterMovementComponent;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
@@ -53,6 +54,11 @@ protected:
 	// Called for Look Input
 	void Look(const FInputActionValue& Value);
 
+	virtual void Landed(const FHitResult& Hit) override;
+	
+	UPROPERTY()
+	bool bCanMove;
+	
 public:
 
 	// Called every frame
@@ -66,5 +72,15 @@ public:
 	FORCEINLINE USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	FORCEINLINE UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 	UFUNCTION(BlueprintPure) FORCEINLINE URCRCharacterMovementComponent* GetRCRCharacterMovementComponent() const { return RCRCharacterMovementComponent; }
+
+	// Double check grind bp unsure if used this
+	FVector2D MovementVector; // Testing something
+
+	UFUNCTION(BlueprintCallable)
+	bool GetCanMove();
+
+	UFUNCTION(BlueprintCallable)
+	void SetCanMove(bool NewState);
+	
 	
 };

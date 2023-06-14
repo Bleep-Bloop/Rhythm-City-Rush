@@ -17,6 +17,18 @@ void URCRCharacterMovementComponent::InitializeComponent()
 	RCRCharacterOwner = Cast<ARhythmCityRushCharacter>(GetOwner());
 }
 
+void URCRCharacterMovementComponent::BeginPlay()
+{
+	Super::BeginPlay();
+
+	// Create the chosen GrindControllerComponent
+	GrindControllerComponent = NewObject<UGrindControllerComponent>(this, GrindControllerComponentBP, "Grind Controller",
+		RF_NoFlags, nullptr, false, nullptr, nullptr);
+
+	GrindControllerComponent->RegisterComponent();
+	
+}
+
 // Getters / Helpers
 bool URCRCharacterMovementComponent::IsMovingOnGround() const
 {
@@ -265,6 +277,14 @@ float URCRCharacterMovementComponent::CapR() const
 float URCRCharacterMovementComponent::CapHH() const
 {
 	return RCRCharacterOwner->GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+}
+
+void URCRCharacterMovementComponent::StartGrind(FHitResult LandingHit, USplineComponent* RailSpline, UCapsuleComponent* CapsuleComponent, USkeletalMeshComponent* SkeletalMesh, ACharacter* PlayerChar)
+{
+	if(GrindControllerComponent)
+	{
+		GrindControllerComponent->Grind(LandingHit, RailSpline, CapsuleComponent, SkeletalMesh, PlayerChar);
+	}
 }
 
 // Interface

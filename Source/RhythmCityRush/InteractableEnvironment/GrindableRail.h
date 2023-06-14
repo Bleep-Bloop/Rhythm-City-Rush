@@ -28,13 +28,13 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	// Building Spline Rail
-	UPROPERTY(VisibleAnywhere, Category = "GrindController")
+	UPROPERTY(VisibleAnywhere, Category = "Grindable Rail")
 	USplineComponent* SplineComponent;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GrindController")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Grindable Rail")
 	UStaticMesh* Mesh;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GrindController")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Grindable Rail")
 	TEnumAsByte<ESplineMeshAxis::Type> ForwardAxis;
 
 	

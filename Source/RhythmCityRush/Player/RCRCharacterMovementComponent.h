@@ -4,7 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "../RhythmCityRush.h"
+#include "Components/SplineComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "RhythmCityRush/InteractableEnvironment/GrindControllerComponent.h"
 #include "RCRCharacterMovementComponent.generated.h"
 
 // NOTE - WallRide can only be used on objects tagged 'WallRidable'
@@ -44,6 +46,9 @@ public:
 	URCRCharacterMovementComponent();
 
 protected:
+
+	virtual void BeginPlay() override;
+	
 	virtual void InitializeComponent() override;
 	
 	virtual bool CanAttemptJump() const override;
@@ -62,6 +67,13 @@ protected:
 	virtual float GetMaxSpeed() const override;
 	virtual float GetMaxBrakingDeceleration() const override;
 
+	// The BP of the GrindControllerComponent to be instantiated
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Grinding)
+	TSubclassOf<UGrindControllerComponent> GrindControllerComponentBP;
+
+	UPROPERTY(EditAnywhere, Category = Grinding)
+	UGrindControllerComponent* GrindControllerComponent;
+
 public:
 	UFUNCTION(BlueprintPure)
 	bool IsCustomMovementMode(ECustomMovementMode InCustomMovementMode) const; // ToDo: Rename
@@ -72,6 +84,9 @@ public:
 	bool IsWallRiding() const { return IsCustomMovementMode(CMOVE_WallRide); }
 	UFUNCTION(BlueprintPure)
 	bool WallRidingIsRight() const { return bWallRideIsRight; }
+
+	// Call the BP Implemented Grind from GrindControllerComponent
+	void StartGrind(FHitResult LandingHit, USplineComponent* RailSpline, UCapsuleComponent* CapsuleComponent, USkeletalMeshComponent* SkeletalMesh, ACharacter* PlayerChar);
 
 private:
 	// Returns owner's capsule component's scaled radius/

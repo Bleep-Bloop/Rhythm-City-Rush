@@ -10,7 +10,6 @@ UGrindControllerComponent::UGrindControllerComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	// ...
 }
 
 
@@ -20,15 +19,7 @@ void UGrindControllerComponent::BeginPlay()
 	Super::BeginPlay();
 
 	// ...
-	
+	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Emerald, "GRINDCONTROLLER:BEGIN");
 }
 
-
-// Called every frame
-void UGrindControllerComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
-{
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
-	// ...
-}
 
