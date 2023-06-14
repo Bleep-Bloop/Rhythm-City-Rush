@@ -17,9 +17,6 @@ UGrindControllerComponent::UGrindControllerComponent()
 void UGrindControllerComponent::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// ...
-	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Emerald, "GRINDCONTROLLER:BEGIN");
 }
 
 
