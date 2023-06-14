@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "TaggingSystemComponent.h"
 #include "../RhythmCityRush.h"
 #include "Components/SplineComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
@@ -74,13 +73,6 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category = Grinding)
 	UGrindControllerComponent* GrindControllerComponent;
-
-	// The BP of the TaggingSystemComponent to be instantiated
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Tagging)
-	TSubclassOf<UTaggingSystemComponent> TaggingSystemComponentBP;
-
-	UPROPERTY(EditAnywhere, Category = Tagging)
-	UTaggingSystemComponent* TaggingSystemComponent;
 
 public:
 	UFUNCTION(BlueprintPure)

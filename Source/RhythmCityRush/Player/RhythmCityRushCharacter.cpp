@@ -3,9 +3,12 @@
 
 #include "RhythmCityRushCharacter.h"
 
+#include <ocidl.h>
+
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "RCRCharacterMovementComponent.h"
+#include "Engine/DecalActor.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "RhythmCityRush/InteractableEnvironment/GrindableRail.h"
 
@@ -66,12 +69,19 @@ void ARhythmCityRushCharacter::BeginPlay()
 	RCRCharacterMovementComponent = GetComponentByClass<URCRCharacterMovementComponent>();
 
 	bCanMove = true;
+
+	// Create the chosen TaggingSystemComponent
+	TaggingSystemComponent = NewObject<UTaggingSystemComponent>(this, TaggingSystemComponentBP, "Tagging System Comp",
+		RF_NoFlags, nullptr, false, nullptr, nullptr);
+
+	TaggingSystemComponent->RegisterComponent();
 	
 }
 
 void ARhythmCityRushCharacter::Tag()
 {
 	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, "TAG");
+	
 }
 
 // Called every frame

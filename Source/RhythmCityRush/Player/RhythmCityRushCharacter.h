@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "InputActionValue.h"
+#include "TaggingSystemComponent.h"
 #include "Camera/CameraComponent.h"
 #include "../RhythmCityRush.h"
 #include "GameFramework/Character.h"
@@ -26,6 +27,13 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 	UCameraComponent* FollowCamera;
+
+	// The BP of the TaggingSystemComponent to be instantiated
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Tagging)
+	TSubclassOf<UTaggingSystemComponent> TaggingSystemComponentBP;
+
+	UPROPERTY(EditAnywhere, Category = Tagging)
+	UTaggingSystemComponent* TaggingSystemComponent;
 
 public:
 
