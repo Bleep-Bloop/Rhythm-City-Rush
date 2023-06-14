@@ -7,6 +7,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "RCRCharacterMovementComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "RhythmCityRush/InteractableEnvironment/GrindableRail.h"
 
 ARhythmCityRushCharacter::ARhythmCityRushCharacter(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer.SetDefaultSubobjectClass<URCRCharacterMovementComponent>(ACharacter::CharacterMovementComponentName))
@@ -58,6 +59,13 @@ void ARhythmCityRushCharacter::BeginPlay()
 			Subsystem->AddMappingContext(DefaultMappingContext, 0);
 		}
 	}
+
+	// Create the chosen GrindControllerComponent
+	//GrindControllerComponent = NewObject<UGrindControllerComponent>(this, GrindControllerComponentBP, "Players Grind Controller",
+	//	RF_NoFlags, nullptr, false, nullptr, nullptr);
+	RCRCharacterMovementComponent = GetComponentByClass<URCRCharacterMovementComponent>();
+
+	bCanMove = true;
 	
 }
 
@@ -91,9 +99,12 @@ void ARhythmCityRushCharacter::SetupPlayerInputComponent(UInputComponent* Player
 
 void ARhythmCityRushCharacter::Move(const FInputActionValue& Value)
 {
+
+	if(!bCanMove)
+		return;
 	
 	// Input is a Vector2D
-	FVector2D MovementVector = Value.Get<FVector2D>();
+	MovementVector = Value.Get<FVector2D>();
 	
 	if(Controller != nullptr)
 	{
@@ -137,6 +148,21 @@ void ARhythmCityRushCharacter::Look(const FInputActionValue& Value)
 	
 }
 
+void ARhythmCityRushCharacter::Landed(const FHitResult& Hit)
+{
+	Super::Landed(Hit);
+
+	if(Hit.GetActor()->GetClass()->IsChildOf(AGrindableRail::StaticClass()))
+	{
+		if(RCRCharacterMovementComponent)
+		{
+			RCRCharacterMovementComponent->StartGrind(Hit, Cast<AGrindableRail>(Hit.GetActor())->SplineComponent, GetCapsuleComponent(), GetMesh(), this);
+		}
+			
+	}
+	
+}
+
 FCollisionQueryParams ARhythmCityRushCharacter::GetIgnoreCharacterParams() const
 {
 	FCollisionQueryParams Params;
@@ -147,5 +173,15 @@ FCollisionQueryParams ARhythmCityRushCharacter::GetIgnoreCharacterParams() const
 	Params.AddIgnoredActor(this);
 
 	return Params;
+}
+
+bool ARhythmCityRushCharacter::GetCanMove()
+{
+	return bCanMove;
+}
+
+void ARhythmCityRushCharacter::SetCanMove(bool NewState)
+{
+	bCanMove = NewState;
 }
 
