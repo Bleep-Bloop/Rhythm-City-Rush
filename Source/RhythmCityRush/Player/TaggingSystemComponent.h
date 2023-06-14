@@ -7,7 +7,7 @@
 #include "TaggingSystemComponent.generated.h"
 
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent), Blueprintable )
 class RHYTHMCITYRUSH_API UTaggingSystemComponent : public UActorComponent
 {
 	GENERATED_BODY()

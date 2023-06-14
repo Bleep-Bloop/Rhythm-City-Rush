@@ -26,6 +26,12 @@ void URCRCharacterMovementComponent::BeginPlay()
 		RF_NoFlags, nullptr, false, nullptr, nullptr);
 
 	GrindControllerComponent->RegisterComponent();
+
+	// Create the chosen TaggingSystemComponent
+	TaggingSystemComponent = NewObject<UTaggingSystemComponent>(this, TaggingSystemComponentBP, "Tagging System Comp",
+		RF_NoFlags, nullptr, false, nullptr, nullptr);
+
+	TaggingSystemComponent->RegisterComponent();
 	
 }
 

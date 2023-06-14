@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fc962d2-5314-4ec6-a65a-8699445a6fae" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RCRCharacterMovementComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RCRCharacterMovementComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RCRCharacterMovementComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RCRCharacterMovementComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/TaggingSystemComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/TaggingSystemComponent.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +93,7 @@
       <workItem from="1686063158992" duration="12748000" />
       <workItem from="1686479962399" duration="4678000" />
       <workItem from="1686727146775" duration="16198000" />
-      <workItem from="1686767290278" duration="388000" />
+      <workItem from="1686767290278" duration="929000" />
     </task>
     <servers />
   </component>
