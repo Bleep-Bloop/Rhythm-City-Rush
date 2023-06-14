@@ -1,9 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "GrindController.h"
+#include "GrindableRail.h"
 
 // Sets default values
-AGrindController::AGrindController()
+AGrindableRail::AGrindableRail()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -15,7 +15,7 @@ AGrindController::AGrindController()
 
 }
 
-void AGrindController::OnConstruction(const FTransform& Transform)
+void AGrindableRail::OnConstruction(const FTransform& Transform)
 {
 	Super::OnConstruction(Transform);
 
@@ -47,14 +47,14 @@ void AGrindController::OnConstruction(const FTransform& Transform)
 }
 
 // Called when the game starts or when spawned
-void AGrindController::BeginPlay()
+void AGrindableRail::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
 // Called every frame
-void AGrindController::Tick(float DeltaTime)
+void AGrindableRail::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 }

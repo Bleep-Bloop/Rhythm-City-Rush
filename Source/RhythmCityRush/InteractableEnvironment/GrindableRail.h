@@ -6,16 +6,16 @@
 #include "Components/SplineComponent.h"
 #include "Components/SplineMeshComponent.h"
 #include "GameFramework/Actor.h"
-#include "GrindController.generated.h"
+#include "GrindableRail.generated.h"
 
 UCLASS()
-class RHYTHMCITYRUSH_API AGrindController : public AActor
+class RHYTHMCITYRUSH_API AGrindableRail : public AActor
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this actor's properties
-	AGrindController();
+	AGrindableRail();
 
 	virtual void OnConstruction(const FTransform& Transform) override;
 
