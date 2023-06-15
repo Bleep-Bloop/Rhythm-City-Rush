@@ -78,9 +78,12 @@ void ARhythmCityRushCharacter::BeginPlay()
 	
 }
 
-void ARhythmCityRushCharacter::Tag()
+void ARhythmCityRushCharacter::TagWall()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, "TAG");
+	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, "Character::TAG");
+
+	// Quick Testing pass size later
+	TaggingSystemComponent->GetRandomGrfTag(EGrfTagSizes::Small);
 	
 }
 
@@ -110,7 +113,8 @@ void ARhythmCityRushCharacter::SetupPlayerInputComponent(UInputComponent* Player
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ARhythmCityRushCharacter::Look);
 
 		// Tagging
-		EnhancedInputComponent->BindAction(TagAction, ETriggerEvent::Triggered, this, &ARhythmCityRushCharacter::Tag);
+		EnhancedInputComponent->BindAction(TagAction, ETriggerEvent::Triggered, this, &ARhythmCityRushCharacter::TagWall);
+		
 	}
 
 }
