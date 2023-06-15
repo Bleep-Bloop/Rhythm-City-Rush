@@ -6,33 +6,46 @@
 #include "Components/ActorComponent.h"
 #include "TaggingSystemComponent.generated.h"
 
+// ToDo: Make Friend Class - RCRPlayerCharacter?
+
+UENUM()
+enum EGrfTagSizes
+{
+	Small,
+	Medium,
+	Large,
+};
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent), Blueprintable )
 class RHYTHMCITYRUSH_API UTaggingSystemComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
-public:	
-	// Sets default values for this component's properties
+public:
+	
 	UTaggingSystemComponent();
-
+	
 protected:
-	// Called when the game starts
+
 	virtual void BeginPlay() override;
+	
+	UPROPERTY(EditDefaultsOnly)
+	TArray<UMaterialInstance*> SmallGrfTagMaterialInstances;
+
+	UPROPERTY(EditDefaultsOnly)
+	TArray<UMaterialInstance*> MediumGrfTagMaterialInstances;
+
+	UPROPERTY(EditDefaultsOnly)
+	TArray<UMaterialInstance*> LargeGrfTagMaterialInstances;
 
 public:	
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
+	
 	UPROPERTY(EditAnywhere, Category = Graffiti)
-	UMaterialInterface* TagDecalToSpawn;
+	UMaterialInterface* GrfTagDecalToSpawn;
+	
+	UPROPERTY(EditAnywhere)
+	FVector DecalSize;
 
-	void TryTag(FHitResult TagHitResult);
-
-	// Distance the raycast will travel to look for a surface. 
-	UPROPERTY(EditAnywhere, Category = Graffiti)
-	float TagDistance;
-
-	// ToDo: Friend Class - Player
+	UMaterialInstance* GetRandomGrfTag(EGrfTagSizes GrfTagSize);
 	
 };
