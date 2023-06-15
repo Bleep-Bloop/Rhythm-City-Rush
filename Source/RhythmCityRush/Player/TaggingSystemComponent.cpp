@@ -13,38 +13,30 @@ UTaggingSystemComponent::UTaggingSystemComponent()
 	
 }
 
-// Called when the game starts
+
 void UTaggingSystemComponent::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// Temp
-	//DecalSize = FVector(32.0, 64.0, 64.0f);
-	
 }
 
-UMaterialInstance* UTaggingSystemComponent::GetRandomGrfTag(EGrfTagSizes GrfTagSize)
+UMaterialInstance* UTaggingSystemComponent::GetRandomGrfTag(const EGrfTagSizes GrfTagSize)
 {
 
 	int MaxRandom;
 
+	// Return random tag of given size.
 	switch (GrfTagSize)
 	{
 	case EGrfTagSizes::Small:
-		MaxRandom = SmallGrfTagMaterialInstances.Num();
-		break;
+		MaxRandom = SmallGrfTagMaterialInstances.Num() - 1;
+		return SmallGrfTagMaterialInstances[FMath::RandRange(0, MaxRandom)];
 	case EGrfTagSizes::Medium:
-		MaxRandom = MediumGrfTagMaterialInstances.Num();
-		break;
+		MaxRandom = MediumGrfTagMaterialInstances.Num() - 1;
+		return MediumGrfTagMaterialInstances[FMath::RandRange(0, MaxRandom)];
 	case EGrfTagSizes::Large:
-		MaxRandom = MediumGrfTagMaterialInstances.Num();
-		break;
-	default: MaxRandom = 1;
+		MaxRandom = MediumGrfTagMaterialInstances.Num() - 1;
+		return LargeGrfTagMaterialInstances[FMath::RandRange(0, MaxRandom)];
+	default: return SmallGrfTagMaterialInstances[0];
 	}
-		
-	int RandomNumberInRange = FMath::RandRange(0, MaxRandom);
-	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, FString::Printf(TEXT("%d"), RandomNumberInRange));
-
-	return nullptr;
 	
 }

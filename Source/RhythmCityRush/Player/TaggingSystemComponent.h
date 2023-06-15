@@ -16,6 +16,10 @@ enum EGrfTagSizes
 	Large,
 };
 
+/**
+ * @brief  Holds references to a player's GrfTagMaterialInstances.
+ * Can return a material instance of a given size for use with TaggableActors.
+ */
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent), Blueprintable )
 class RHYTHMCITYRUSH_API UTaggingSystemComponent : public UActorComponent
 {
@@ -26,7 +30,9 @@ public:
 	UTaggingSystemComponent();
 	
 protected:
-
+	/**
+	 * @brief 
+	 */
 	virtual void BeginPlay() override;
 	
 	UPROPERTY(EditDefaultsOnly)
@@ -40,12 +46,6 @@ protected:
 
 public:	
 	
-	UPROPERTY(EditAnywhere, Category = Graffiti)
-	UMaterialInterface* GrfTagDecalToSpawn;
-	
-	UPROPERTY(EditAnywhere)
-	FVector DecalSize;
-
-	UMaterialInstance* GetRandomGrfTag(EGrfTagSizes GrfTagSize);
+	UMaterialInstance* GetRandomGrfTag(const EGrfTagSizes GrfTagSize);
 	
 };
