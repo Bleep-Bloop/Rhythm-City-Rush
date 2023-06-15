@@ -6,13 +6,29 @@
   <component name="ChangeListManager">
     <list default="true" id="6fc962d2-5314-4ec6-a65a-8699445a6fae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Graffiti/DecalTest.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/BP_TaggableWall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP_TaggableWall.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/BP_TaggingSystemComponent_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP_TaggingSystemComponent_Player.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Graffiti/Decal_GRF_S_1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Graffiti/Decal_GRF_S_1.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Graffiti/Decal_GRF_S_2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Graffiti/Decal_GRF_S_2.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Graffiti/Mat_GRF_Small.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Graffiti/Mat_GRF_Small.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Graffiti/MI_BaseGrf_M.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Graffiti/Mat_BaseGrf.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Graffiti/Mat_GRF_Small.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Graffiti/grf_2_11.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Graffiti/grf_2_12.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Graffiti/grf_2_16.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Graffiti/grf_2_24.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/0/HQ/Q30ZHDX1NRHODSCIUXAZXE.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/4/8L/7K75RAVMPDQJXA4DQHZRWZ.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/6/W9/EU5VZOYG4J6DDSN8GLFIOT.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/7/10/FUJSWVUZOF5S082GJMOK47.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/7/10/FUJSWVUZOF5S082GJMOK47.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/8/H1/89VQ8VKC7V65MD0X6URWYI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/8/H1/89VQ8VKC7V65MD0X6URWYI.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/9/6U/H9YGAG5BRMDFFOJKMN0XP5.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/B/EY/PK7Q0UWI3ZPQFBJKAH6R3X.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/B/EY/PK7Q0UWI3ZPQFBJKAH6R3X.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/C/GT/5IBFTMZKQ1OFV74AJ58OCT.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/TaggableActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/TaggableActor.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/TaggableActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/TaggableActor.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/TaggingSystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/TaggingSystemComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/TaggingSystemComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/TaggingSystemComponent.h" afterDir="false" />
     </list>
@@ -101,7 +117,7 @@
       <workItem from="1686063158992" duration="12748000" />
       <workItem from="1686479962399" duration="4678000" />
       <workItem from="1686727146775" duration="16198000" />
-      <workItem from="1686767290278" duration="12114000" />
+      <workItem from="1686767290278" duration="20157000" />
     </task>
     <servers />
   </component>
