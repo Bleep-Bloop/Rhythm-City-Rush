@@ -36,4 +36,10 @@ public:
 	UFUNCTION()
 	void OnOverlapBegin(class AActor* OverlappedActor, class AActor* OtherActor);
 
+	/**
+	 * @brief Make the TagDecalComponent Active and change the Decal Material of the TagDecalComponent on surface.
+	 * @param Tag Image to replace default Decal Material.
+	 */
+	void TagWall(UMaterialInterface* Tag);
+
 };

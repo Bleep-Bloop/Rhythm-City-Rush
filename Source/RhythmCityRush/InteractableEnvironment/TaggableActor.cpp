@@ -30,6 +30,8 @@ void ATaggableActor::BeginPlay()
 
 	OnActorBeginOverlap.AddDynamic(this, &ATaggableActor::OnOverlapBegin);
 	
+	TagDecalComponent->SetHiddenInGame(true);
+	
 }
 
 
@@ -46,7 +48,20 @@ void ATaggableActor::OnOverlapBegin(AActor* OverlappedActor, AActor* OtherActor)
 	if(OtherActor->IsA(ARhythmCityRushCharacter::StaticClass()))
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, "Set Player Tag");
+
+		Cast<ARhythmCityRushCharacter>(OtherActor)->TagWall();
+		
+		//TagWall(nullptr);
 	}
 	
+}
+
+void ATaggableActor::TagWall(UMaterialInterface* Tag)
+{
+	TagDecalComponent->SetDecalMaterial(Tag);
+	// ToDo: Depending on future materials, will have to handle size. Ideally all same size though.
+	TagDecalComponent->SetHiddenInGame(false);
+	
+
 }
 
