@@ -9,7 +9,6 @@
 #include "../RhythmCityRush.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/SpringArmComponent.h"
-//#include "RhythmCityRush/InteractableEnvironment/GrindControllerComponent.h"
 #include "RhythmCityRushCharacter.generated.h"
 
 UCLASS()
@@ -70,8 +69,6 @@ protected:
 	UPROPERTY()
 	bool bCanMove;
 
-	void Tag();
-	
 public:
 
 	// Called every frame
@@ -95,5 +92,6 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetCanMove(bool NewState);
 	
+	void TagWall();
 	
 };
