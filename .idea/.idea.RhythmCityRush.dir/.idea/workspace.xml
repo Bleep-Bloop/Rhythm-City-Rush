@@ -7,15 +7,19 @@
     <list default="true" id="6fc962d2-5314-4ec6-a65a-8699445a6fae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BP_RhythmCityRushCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP_RhythmCityRushCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/BP_GrindControllerComponent.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP_GrindControllerComponent.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/BP_TaggingSystemComponent_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP_TaggingSystemComponent_Player.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/4/66/H44NWJ81HGB0KS71QFJNOE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/4/66/H44NWJ81HGB0KS71QFJNOE.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/7/10/FUJSWVUZOF5S082GJMOK47.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/7/10/FUJSWVUZOF5S082GJMOK47.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/7/TJ/FDTOKU1HYHBG8M6VHEH8FI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/7/TJ/FDTOKU1HYHBG8M6VHEH8FI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/GrindControllerComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/GrindControllerComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/GrindControllerComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/GrindControllerComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/GrindableRail.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/GrindableRail.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/TaggableActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/TaggableActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/TaggableActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/TaggableActor.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RCRCharacterMovementComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RCRCharacterMovementComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RCRCharacterMovementComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RCRCharacterMovementComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/TaggingSystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/TaggingSystemComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/TaggingSystemComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/TaggingSystemComponent.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,14 +39,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="RhythmCityRush" type="Uproject" factoryName="rider.uproject">
       <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/RhythmCityRush.uproject" />
@@ -101,6 +106,7 @@
       <workItem from="1686063158992" duration="12748000" />
       <workItem from="1686479962399" duration="4678000" />
       <workItem from="1686727146775" duration="16198000" />
+      <workItem from="1686767290278" duration="30987000" />
     </task>
     <servers />
   </component>

@@ -26,7 +26,6 @@ void URCRCharacterMovementComponent::BeginPlay()
 		RF_NoFlags, nullptr, false, nullptr, nullptr);
 
 	GrindControllerComponent->RegisterComponent();
-	
 }
 
 // Getters / Helpers
@@ -157,13 +156,13 @@ bool URCRCharacterMovementComponent::TryWallRide()
 
 	// Left Cast
 	GetWorld()->LineTraceSingleByProfile(WallHit, Start, LeftEnd, "BlockAll", Params);
-	if(WallHit.IsValidBlockingHit() && (Velocity | WallHit.Normal) < 0 && WallHit.GetComponent()->ComponentHasTag("WallRidable"))
+	if(WallHit.IsValidBlockingHit() && (Velocity | WallHit.Normal) < 0 && WallHit.GetComponent()->ComponentHasTag("WallRideable"))
 		bWallRideIsRight = false;
 	// Right Cast
 	else
 	{
 		GetWorld()->LineTraceSingleByProfile(WallHit, Start, RightEnd, "BlockAll", Params);
-		if(WallHit.IsValidBlockingHit() && (Velocity | WallHit.Normal) < 0 && WallHit.GetComponent()->ComponentHasTag("WallRidable"))
+		if(WallHit.IsValidBlockingHit() && (Velocity | WallHit.Normal) < 0 && WallHit.GetComponent()->ComponentHasTag("WallRideable"))
 			bWallRideIsRight = true;
 		else
 			return false;
@@ -212,7 +211,7 @@ void URCRCharacterMovementComponent::PhysWallRide(float deltaTime, int32 Iterati
 		FHitResult WallHit;
 		GetWorld()->LineTraceSingleByProfile(WallHit, Start, End, "BlockAll", Params);
 		bool bWantsToPullAway = WallHit.IsValidBlockingHit() && !Acceleration.IsNearlyZero() && (Acceleration.GetSafeNormal() | WallHit.Normal) > SinPullAwayAngle;
-		if(!WallHit.IsValidBlockingHit() || bWantsToPullAway || !WallHit.GetComponent()->ComponentHasTag("WallRidable"))
+		if(!WallHit.IsValidBlockingHit() || bWantsToPullAway || !WallHit.GetComponent()->ComponentHasTag("WallRideable"))
 		{
 			SetMovementMode(MOVE_Falling);
 			StartNewPhysics(RemainingTime, Iterations);
@@ -267,7 +266,13 @@ void URCRCharacterMovementComponent::PhysWallRide(float deltaTime, int32 Iterati
 		SetMovementMode(MOVE_Falling);
 }
 
-// Helpers
+void URCRCharacterMovementComponent::StartGrind(FHitResult LandingHit, USplineComponent* RailSpline, UCapsuleComponent* CapsuleComponent, USkeletalMeshComponent* SkeletalMesh, ACharacter* PlayerChar) const
+{
+	if(GrindControllerComponent)
+	{
+		GrindControllerComponent->Grind(LandingHit, RailSpline, CapsuleComponent, SkeletalMesh, PlayerChar);
+	}
+}
 
 float URCRCharacterMovementComponent::CapR() const
 {
@@ -279,15 +284,6 @@ float URCRCharacterMovementComponent::CapHH() const
 	return RCRCharacterOwner->GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
 }
 
-void URCRCharacterMovementComponent::StartGrind(FHitResult LandingHit, USplineComponent* RailSpline, UCapsuleComponent* CapsuleComponent, USkeletalMeshComponent* SkeletalMesh, ACharacter* PlayerChar)
-{
-	if(GrindControllerComponent)
-	{
-		GrindControllerComponent->Grind(LandingHit, RailSpline, CapsuleComponent, SkeletalMesh, PlayerChar);
-	}
-}
-
-// Interface
 bool URCRCharacterMovementComponent::IsCustomMovementMode(ECustomMovementMode InCustomMovementMode) const
 {
 	return MovementMode == MOVE_Custom && CustomMovementMode == InCustomMovementMode;

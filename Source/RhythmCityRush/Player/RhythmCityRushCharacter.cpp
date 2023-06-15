@@ -6,6 +6,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "RCRCharacterMovementComponent.h"
+#include "Engine/DecalActor.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "RhythmCityRush/InteractableEnvironment/GrindableRail.h"
 
@@ -59,14 +60,16 @@ void ARhythmCityRushCharacter::BeginPlay()
 			Subsystem->AddMappingContext(DefaultMappingContext, 0);
 		}
 	}
-
-	// Create the chosen GrindControllerComponent
-	//GrindControllerComponent = NewObject<UGrindControllerComponent>(this, GrindControllerComponentBP, "Players Grind Controller",
-	//	RF_NoFlags, nullptr, false, nullptr, nullptr);
+	
 	RCRCharacterMovementComponent = GetComponentByClass<URCRCharacterMovementComponent>();
 
 	bCanMove = true;
-	
+
+	// Create the chosen TaggingSystemComponent
+	TaggingSystemComponent = NewObject<UTaggingSystemComponent>(this, TaggingSystemComponentBP, "Tagging System Comp",
+		RF_NoFlags, nullptr, false, nullptr, nullptr);
+
+	TaggingSystemComponent->RegisterComponent();
 }
 
 // Called every frame
@@ -93,8 +96,10 @@ void ARhythmCityRushCharacter::SetupPlayerInputComponent(UInputComponent* Player
 
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ARhythmCityRushCharacter::Look);
-	}
 
+		// Tagging
+		EnhancedInputComponent->BindAction(TagAction, ETriggerEvent::Triggered, this, &ARhythmCityRushCharacter::TryTaggingWall);
+	}
 }
 
 void ARhythmCityRushCharacter::Move(const FInputActionValue& Value)
@@ -145,7 +150,30 @@ void ARhythmCityRushCharacter::Look(const FInputActionValue& Value)
 		AddControllerPitchInput(LookAxisVector.Y); 
 		AddControllerYawInput(LookAxisVector.X);
 	}
-	
+}
+
+void ARhythmCityRushCharacter::TryTaggingWall()
+{
+	if(OccupiedTaggableActor && OccupiedTaggableActor->GetIsTagged() == false)
+	{
+		// Get tag zone size
+		const EGrfTagSizes CurrentTagSize = OccupiedTaggableActor->GetTagZoneSize();
+
+		// Get random size from tagging system component
+		UMaterialInstance* GrfTagToSpawn = TaggingSystemComponent->GetRandomGrfTag(CurrentTagSize);
+		
+		OccupiedTaggableActor->TagWall(GrfTagToSpawn);
+	}
+}
+
+void ARhythmCityRushCharacter::EnterTagZone(ATaggableActor* CurrentTagZone)
+{
+	OccupiedTaggableActor = CurrentTagZone;
+}
+
+void ARhythmCityRushCharacter::ExitTagZone()
+{
+	OccupiedTaggableActor = nullptr;
 }
 
 void ARhythmCityRushCharacter::Landed(const FHitResult& Hit)
@@ -158,9 +186,7 @@ void ARhythmCityRushCharacter::Landed(const FHitResult& Hit)
 		{
 			RCRCharacterMovementComponent->StartGrind(Hit, Cast<AGrindableRail>(Hit.GetActor())->SplineComponent, GetCapsuleComponent(), GetMesh(), this);
 		}
-			
 	}
-	
 }
 
 FCollisionQueryParams ARhythmCityRushCharacter::GetIgnoreCharacterParams() const
@@ -185,3 +211,7 @@ void ARhythmCityRushCharacter::SetCanMove(bool NewState)
 	bCanMove = NewState;
 }
 
+FVector2D ARhythmCityRushCharacter::GetMovementVector()
+{
+	return MovementVector;
+}

@@ -4,11 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "InputActionValue.h"
+#include "TaggingSystemComponent.h"
 #include "Camera/CameraComponent.h"
 #include "../RhythmCityRush.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/SpringArmComponent.h"
-//#include "RhythmCityRush/InteractableEnvironment/GrindControllerComponent.h"
+#include "RhythmCityRush/InteractableEnvironment/TaggableActor.h"
 #include "RhythmCityRushCharacter.generated.h"
 
 UCLASS()
@@ -27,9 +28,22 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 	UCameraComponent* FollowCamera;
 
+	// The BP of the TaggingSystemComponent to be instantiated
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Tagging)
+	TSubclassOf<UTaggingSystemComponent> TaggingSystemComponentBP;
+
+	UPROPERTY(EditAnywhere, Category = Tagging)
+	UTaggingSystemComponent* TaggingSystemComponent;
+
 public:
 
 	ARhythmCityRushCharacter(const FObjectInitializer& ObjectInitializer);
+	
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+	// Called to bind functionality to input
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 protected:
 
@@ -47,6 +61,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* LookAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	class UInputAction* TagAction;
 	
 	// Called for Movement Input
 	void Move(const FInputActionValue& Value);
@@ -58,29 +75,41 @@ protected:
 	
 	UPROPERTY()
 	bool bCanMove;
-	
+
+	FVector2D MovementVector;
+
+// Tagging
+
+	/**
+	 * @brief Called with IA_Tag to handle communication with TaggingSystemComponent and TaggableActor.
+	 */
+	void TryTaggingWall();
+
+	// TaggableActor the character is currently occupying, set by EnterTagZone().
+	UPROPERTY(EditAnywhere)
+	ATaggableActor* OccupiedTaggableActor;
+
 public:
 
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	// Sets OccupiedTaggableActor to given TaggableActor, called from TaggableActor::OnOverlapBegin. 
+	void EnterTagZone(ATaggableActor* CurrentTagZone);
 
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
+	// Clears OccupiedTaggableActor, called from TaggableActor::OnOverlapEnd.
+	void ExitTagZone();
+	
 	FCollisionQueryParams GetIgnoreCharacterParams() const;
 	
 	FORCEINLINE USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	FORCEINLINE UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 	UFUNCTION(BlueprintPure) FORCEINLINE URCRCharacterMovementComponent* GetRCRCharacterMovementComponent() const { return RCRCharacterMovementComponent; }
-
-	// Double check grind bp unsure if used this
-	FVector2D MovementVector; // Testing something
-
+	
 	UFUNCTION(BlueprintCallable)
 	bool GetCanMove();
 
 	UFUNCTION(BlueprintCallable)
 	void SetCanMove(bool NewState);
-	
+
+	UFUNCTION(BlueprintCallable)
+	FVector2D GetMovementVector();
 	
 };
