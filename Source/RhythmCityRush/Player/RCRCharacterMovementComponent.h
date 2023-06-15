@@ -9,7 +9,7 @@
 #include "RhythmCityRush/InteractableEnvironment/GrindControllerComponent.h"
 #include "RCRCharacterMovementComponent.generated.h"
 
-// NOTE - WallRide can only be used on objects tagged 'WallRidable'
+// NOTE - WallRide can only be used on meshes with Component Tag: 'WallRideable'
 
 UENUM(BlueprintType)
 enum ECustomMovementMode
@@ -86,7 +86,7 @@ public:
 	bool WallRidingIsRight() const { return bWallRideIsRight; }
 
 	// Call the BP Implemented Grind from GrindControllerComponent
-	void StartGrind(FHitResult LandingHit, USplineComponent* RailSpline, UCapsuleComponent* CapsuleComponent, USkeletalMeshComponent* SkeletalMesh, ACharacter* PlayerChar);
+	void StartGrind(FHitResult LandingHit, USplineComponent* RailSpline, UCapsuleComponent* CapsuleComponent, USkeletalMeshComponent* SkeletalMesh, ACharacter* PlayerChar) const;
 
 private:
 	// Returns owner's capsule component's scaled radius/
