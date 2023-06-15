@@ -17,14 +17,6 @@
       <change beforePath="$PROJECT_DIR$/Content/Graffiti/grf_2_12.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Graffiti/grf_2_16.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Graffiti/grf_2_24.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/0/HQ/Q30ZHDX1NRHODSCIUXAZXE.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/4/8L/7K75RAVMPDQJXA4DQHZRWZ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/6/W9/EU5VZOYG4J6DDSN8GLFIOT.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/7/10/FUJSWVUZOF5S082GJMOK47.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/7/10/FUJSWVUZOF5S082GJMOK47.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/8/H1/89VQ8VKC7V65MD0X6URWYI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/8/H1/89VQ8VKC7V65MD0X6URWYI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/9/6U/H9YGAG5BRMDFFOJKMN0XP5.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/B/EY/PK7Q0UWI3ZPQFBJKAH6R3X.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/B/EY/PK7Q0UWI3ZPQFBJKAH6R3X.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/C/GT/5IBFTMZKQ1OFV74AJ58OCT.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/TaggableActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/TaggableActor.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/TaggableActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/TaggableActor.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.cpp" afterDir="false" />
@@ -117,7 +109,7 @@
       <workItem from="1686063158992" duration="12748000" />
       <workItem from="1686479962399" duration="4678000" />
       <workItem from="1686727146775" duration="16198000" />
-      <workItem from="1686767290278" duration="20157000" />
+      <workItem from="1686767290278" duration="23072000" />
     </task>
     <servers />
   </component>
