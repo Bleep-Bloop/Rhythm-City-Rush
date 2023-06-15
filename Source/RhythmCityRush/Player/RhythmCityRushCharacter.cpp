@@ -45,6 +45,9 @@ ARhythmCityRushCharacter::ARhythmCityRushCharacter(const FObjectInitializer& Obj
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
 	
+	GetMesh()->SetReceivesDecals(false);
+	GetCapsuleComponent()->SetReceivesDecals(false);
+	
 }
 
 // Called when the game starts or when spawned
