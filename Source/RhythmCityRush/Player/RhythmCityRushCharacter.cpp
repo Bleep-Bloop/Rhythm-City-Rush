@@ -73,6 +73,10 @@ void ARhythmCityRushCharacter::BeginPlay()
 		RF_NoFlags, nullptr, false, nullptr, nullptr);
 
 	TaggingSystemComponent->RegisterComponent();
+
+	// Players start with no spray cans
+	CurrentSprayCans = 0;
+	
 }
 
 // Called every frame
@@ -165,7 +169,7 @@ void ARhythmCityRushCharacter::Look(const FInputActionValue& Value)
 
 void ARhythmCityRushCharacter::TryTaggingWall()
 {
-	if(OccupiedTaggableActor && OccupiedTaggableActor->GetIsTagged() == false)
+	if(OccupiedTaggableActor && OccupiedTaggableActor->GetIsTagged() == false && CurrentSprayCans > 0)
 	{
 		// Get tag zone size
 		const EGrfTagSizes CurrentTagSize = OccupiedTaggableActor->GetTagZoneSize();
@@ -173,8 +177,30 @@ void ARhythmCityRushCharacter::TryTaggingWall()
 		// Get random size from tagging system component
 		UMaterialInstance* GrfTagToSpawn = TaggingSystemComponent->GetRandomGrfTag(CurrentTagSize);
 		
-		OccupiedTaggableActor->TagWall(GrfTagToSpawn);
+		if(OccupiedTaggableActor->TagWall(GrfTagToSpawn))
+			UseSprayCan();
+		
 	}
+}
+
+bool ARhythmCityRushCharacter::PickupSprayCan()
+{
+	if(CurrentSprayCans < MaxSprayCans)
+	{
+		CurrentSprayCans++;
+		return true;
+	}
+	return false;
+}
+
+bool ARhythmCityRushCharacter::UseSprayCan()
+{
+	if(CurrentSprayCans > 0)
+	{
+		CurrentSprayCans--;
+		return true;
+	}
+	return false;
 }
 
 void ARhythmCityRushCharacter::EnterTagZone(ATaggableActor* CurrentTagZone)
