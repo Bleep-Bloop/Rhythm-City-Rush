@@ -62,7 +62,7 @@ void ATaggableActor::OnOverlapEnd(AActor* OverlappedActor, AActor* OtherActor)
 	}
 }
 
-void ATaggableActor::TagWall(UMaterialInterface* Tag)
+bool ATaggableActor::TagWall(UMaterialInterface* Tag)
 {
 	if(Tag)
 	{
@@ -70,10 +70,11 @@ void ATaggableActor::TagWall(UMaterialInterface* Tag)
 		// ToDo: Depending on future materials, will have to handle size.
 		TagDecalComponent->SetHiddenInGame(false);
 		bIsTagged = true;
+		return true;
 	}
 	else
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, "ATaggableActor::TagWall() ERROR - Tag NULL");
+		return false;
 	}
 }
 

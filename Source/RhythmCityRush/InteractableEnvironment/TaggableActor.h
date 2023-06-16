@@ -50,7 +50,7 @@ public:
 	 * @brief Make the TagDecalComponent Active and change the Decal Material of the TagDecalComponent on surface.
 	 * @param Tag Image to replace default Decal Material.
 	 */
-	void TagWall(UMaterialInterface* Tag);
+	bool TagWall(UMaterialInterface* Tag);
 	
 	EGrfTagSizes GetTagZoneSize() const;
 
