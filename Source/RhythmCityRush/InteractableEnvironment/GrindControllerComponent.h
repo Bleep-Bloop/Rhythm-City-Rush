@@ -27,6 +27,6 @@ public:
 	//virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void Grind(FHitResult LandingHit, USplineComponent* RailSpline, UCapsuleComponent* CapsuleComponent, USkeletalMeshComponent* SkeletalMesh, ACharacter* PlayerChar);
+	void Grind(FHitResult LandingHit, USplineComponent* RailSpline, ARhythmCityRushCharacter* PlayerChar);
 		
 };
