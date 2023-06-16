@@ -6,8 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="6fc962d2-5314-4ec6-a65a-8699445a6fae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/BP_GrindControllerComponent.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP_GrindControllerComponent.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/BP_RhythmCityRushCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP_RhythmCityRushCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GrindTimelineCurve.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GrindTimelineCurve.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/Dev_Map.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/Dev_Map.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/8/H1/89VQ8VKC7V65MD0X6URWYI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/8/H1/89VQ8VKC7V65MD0X6URWYI.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/B/EY/PK7Q0UWI3ZPQFBJKAH6R3X.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/B/EY/PK7Q0UWI3ZPQFBJKAH6R3X.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/GrindControllerComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/GrindControllerComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RCRCharacterMovementComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RCRCharacterMovementComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RCRCharacterMovementComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RCRCharacterMovementComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +106,7 @@
       <workItem from="1686727146775" duration="16198000" />
       <workItem from="1686767290278" duration="30987000" />
       <workItem from="1686826788718" duration="61000" />
+      <workItem from="1686832525598" duration="6409000" />
     </task>
     <servers />
   </component>
