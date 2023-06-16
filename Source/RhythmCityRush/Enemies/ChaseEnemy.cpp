@@ -3,8 +3,11 @@
 
 #include "ChaseEnemy.h"
 
+#include "ChaseEnemyController.h"
 #include "Components/BoxComponent.h"
 #include "Components/SphereComponent.h"
+#include "Navigation/PathFollowingComponent.h"
+#include "AITypes.h"
 
 // Sets default values
 AChaseEnemy::AChaseEnemy()
@@ -20,7 +23,7 @@ AChaseEnemy::AChaseEnemy()
 
 	DamageCollision = CreateDefaultSubobject<UBoxComponent>("Damage Collision");
 	DamageCollision->SetupAttachment(RootComponent); // ToDo: Connect to socket when animated
-
+	
 }
 
 // Called when the game starts or when spawned
@@ -28,6 +31,14 @@ void AChaseEnemy::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	ChaseEnemyController = Cast<AChaseEnemyController>(GetController());
+	ChaseEnemyController->GetPathFollowingComponent()->OnRequestFinished.AddUObject(this, &AChaseEnemy::OnAIMoveCompleted);
+	
+}
+
+void AChaseEnemy::OnAIMoveCompleted(FAIRequestID, const FPathFollowingResult& Result)
+{
+	ChaseEnemyController->RandomPatrol();
 }
 
 // Called every frame
