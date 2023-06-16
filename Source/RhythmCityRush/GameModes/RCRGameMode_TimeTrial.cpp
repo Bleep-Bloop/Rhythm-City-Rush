@@ -13,6 +13,8 @@ void ARCRGameMode_TimeTrial::BeginPlay()
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), TaggableActorBPToFind, TaggableActorsInLevel);
 
 	NumberOfTaggableActorsInLevel = TaggableActorsInLevel.Num();
+
+	StartTimer();
 	
 }
 
@@ -28,7 +30,10 @@ void ARCRGameMode_TimeTrial::CheckTimeTrialProgress()
 
 void ARCRGameMode_TimeTrial::EndTimeTrial()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, "Level Complete");
+
+	float SecondsElapsed = FPlatformTime::Seconds() - StartSeconds;
+	
+	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, FString::Printf(TEXT("Level Complete - Time: %f"), SecondsElapsed));
 }
 
 int ARCRGameMode_TimeTrial::CheckTaggedActorsInLevel()
@@ -45,4 +50,9 @@ int ARCRGameMode_TimeTrial::CheckTaggedActorsInLevel()
 
 	return NumberOfTaggedActors;
 	
+}
+
+void ARCRGameMode_TimeTrial::StartTimer()
+{
+	StartSeconds = FPlatformTime::Seconds();
 }

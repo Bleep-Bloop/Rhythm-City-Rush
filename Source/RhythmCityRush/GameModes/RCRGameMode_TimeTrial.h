@@ -43,11 +43,16 @@ protected:
 	 */
 	int CheckTaggedActorsInLevel();
 
+	void StartTimer();
+
 public:
 	
 	/**
 	 * @brief Checks if all TaggableActors in level are tagged and ends game if true.
 	 */
 	void CheckTimeTrialProgress();
+
+	UPROPERTY(EditAnywhere)
+	float StartSeconds;
 	
 };
