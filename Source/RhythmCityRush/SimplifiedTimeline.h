@@ -76,6 +76,8 @@ public:
  
     UFUNCTION(BlueprintCallable, Category = "Simplified Timeline")
         void Reverse();
- 
+
+    UFUNCTION(BlueprintCallable, Category = "Simplified Timeline")
+        void SkipToEnd();
  
 };
