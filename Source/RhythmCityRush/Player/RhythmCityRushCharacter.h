@@ -96,6 +96,14 @@ protected:
 	UPROPERTY(EditAnywhere)
 	ATaggableActor* OccupiedTaggableActor;
 
+// Spray Can System
+
+	UPROPERTY(EditAnywhere, Category = "Spray Cans")
+	int MaxSprayCans;
+
+	UPROPERTY(VisibleAnywhere, Category = "Spray Cans")
+	int CurrentSprayCans;
+
 public:
 
 	// Sets OccupiedTaggableActor to given TaggableActor, called from TaggableActor::OnOverlapBegin. 
@@ -118,5 +126,11 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	FVector2D GetMovementVector();
+
+// Spray Cans
+	
+	bool PickupSprayCan();
+
+	bool UseSprayCan();
 	
 };

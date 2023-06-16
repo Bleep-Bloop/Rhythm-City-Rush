@@ -73,6 +73,10 @@ void ARhythmCityRushCharacter::BeginPlay()
 		RF_NoFlags, nullptr, false, nullptr, nullptr);
 
 	TaggingSystemComponent->RegisterComponent();
+
+	// Players start with no spray cans
+	CurrentSprayCans = 0;
+	
 }
 
 // Called every frame
@@ -175,6 +179,26 @@ void ARhythmCityRushCharacter::TryTaggingWall()
 		
 		OccupiedTaggableActor->TagWall(GrfTagToSpawn);
 	}
+}
+
+bool ARhythmCityRushCharacter::PickupSprayCan()
+{
+	if(CurrentSprayCans < MaxSprayCans)
+	{
+		CurrentSprayCans++;
+		return true;
+	}
+	return false;
+}
+
+bool ARhythmCityRushCharacter::UseSprayCan()
+{
+	if(CurrentSprayCans > 0)
+	{
+		CurrentSprayCans--;
+		return true;
+	}
+	return false;
 }
 
 void ARhythmCityRushCharacter::EnterTagZone(ATaggableActor* CurrentTagZone)
