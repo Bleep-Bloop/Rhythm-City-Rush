@@ -47,37 +47,80 @@ void AChaseEnemy::BeginPlay()
 
 void AChaseEnemy::OnAIMoveCompleted(FAIRequestID, const FPathFollowingResult& Result)
 {
-	ChaseEnemyAIController->RandomPatrol();
+	if(!bPlayerDetected)
+	{
+		ChaseEnemyAIController->RandomPatrol();
+	}
+	else if(bPlayerDetected && bCanAttackPlayer)
+	{
+		StopSeekingPlayer();
+
+		// Attacking player
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Black, "Attacking Enemy");
+	}
 }
 
 void AChaseEnemy::OnPlayerDetectedOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	PlayerCharacter = Cast<ARhythmCityRushCharacter>(OtherActor);
+	if(PlayerCharacter)
+	{
+		bPlayerDetected = true;
+		SeekPlayer();
+	}
 }
 
 void AChaseEnemy::OnPlayerDetectedOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
+	PlayerCharacter = Cast<ARhythmCityRushCharacter>(OtherActor);
+	if(PlayerCharacter)
+	{
+		bPlayerDetected = false;
+		StopSeekingPlayer();
+		ChaseEnemyAIController->RandomPatrol();
+	}
 }
 
 void AChaseEnemy::OnPlayerAttackOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	PlayerCharacter = Cast<ARhythmCityRushCharacter>(OtherActor);
+	if(PlayerCharacter)
+	{
+		bCanAttackPlayer = true;
+	}
 }
 
 void AChaseEnemy::OnPlayerAttackOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
+	PlayerCharacter = Cast<ARhythmCityRushCharacter>(OtherActor);
+	if(PlayerCharacter)
+	{
+		bCanAttackPlayer = false;
+		SeekPlayer();
+	}
 }
 
 void AChaseEnemy::OnDealDamageOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	PlayerCharacter = Cast<ARhythmCityRushCharacter>(OtherActor);
+	if(PlayerCharacter && CanDealDamage)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, "DAMAGE DEALT TO PLAYER");
+	}
 }
 
 void AChaseEnemy::MoveToPlayer()
 {
-	ChaseEnemyAIController->MoveToLocation(PlayerCharacter->GetActorLocation(), StoppingDistance, true, true);
+	if(PlayerCharacter)
+	{
+		ChaseEnemyAIController->MoveToLocation(PlayerCharacter->GetActorLocation(), StoppingDistance, true, true);
+	}
+	
 }
 
 void AChaseEnemy::SeekPlayer()
