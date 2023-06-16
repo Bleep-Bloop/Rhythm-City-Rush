@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6fc962d2-5314-4ec6-a65a-8699445a6fae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/0/81/JK8XHTNHO53A26Q550V3W3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/0/81/JK8XHTNHO53A26Q550V3W3.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/4/66/H44NWJ81HGB0KS71QFJNOE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/4/66/H44NWJ81HGB0KS71QFJNOE.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/Dev_Map/9/GL/3C0K84TK626RNN30L8ZCP8.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/TaggableActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/TaggableActor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/TaggableActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/InteractableEnvironment/TaggableActor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/Dev_Map.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/Dev_Map.umap" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +98,7 @@
       <workItem from="1686832525598" duration="7661000" />
       <workItem from="1686894308831" duration="1052000" />
       <workItem from="1686896273312" duration="4019000" />
+      <workItem from="1686907932454" duration="1439000" />
     </task>
     <servers />
   </component>
