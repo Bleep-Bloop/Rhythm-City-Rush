@@ -79,7 +79,7 @@ void ARhythmCityRushCharacter::BeginPlay()
 void ARhythmCityRushCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	
 }
 
 // Called to bind functionality to input
@@ -92,6 +92,7 @@ void ARhythmCityRushCharacter::SetupPlayerInputComponent(UInputComponent* Player
 	{
 		// Moving
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ARhythmCityRushCharacter::Move);
+		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Completed, this, &ARhythmCityRushCharacter::MoveInputStopped);
 
 		// Jumping
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, this, &ARhythmCityRushCharacter::Jump);
@@ -108,11 +109,12 @@ void ARhythmCityRushCharacter::SetupPlayerInputComponent(UInputComponent* Player
 void ARhythmCityRushCharacter::Move(const FInputActionValue& Value)
 {
 
+	// We want the MovementInputVector even if we are not moving for use with grinds and wall rides.
+	MovementInputVector = Value.Get<FVector2D>();
+	
+	
 	if(!bCanMove)
 		return;
-	
-	// Input is a Vector2D
-	MovementVector = Value.Get<FVector2D>();
 	
 	if(Controller != nullptr)
 	{
@@ -127,18 +129,24 @@ void ARhythmCityRushCharacter::Move(const FInputActionValue& Value)
 		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 
 		// If the player pulls the thumbstick back increase braking.
-		if(MovementVector.Y < -0.95)
+		if(MovementInputVector.Y < -0.95)
 		{
 			// Increase to bring character to a stop when pulled back
 			GetCharacterMovement()->BrakingDecelerationWalking = 1500;
 		}
 		else
 		{
-			AddMovementInput(ForwardDirection, MovementVector.Y);
-			AddMovementInput(RightDirection, MovementVector.X);
+			AddMovementInput(ForwardDirection, MovementInputVector.Y);
+			AddMovementInput(RightDirection, MovementInputVector.X);
 			GetCharacterMovement()->BrakingDecelerationWalking = 0;
 		}
 	}
+
+}
+
+void ARhythmCityRushCharacter::MoveInputStopped()
+{
+	MovementInputVector = FVector2d::Zero();
 }
 
 void ARhythmCityRushCharacter::Look(const FInputActionValue& Value)
@@ -187,7 +195,7 @@ void ARhythmCityRushCharacter::Landed(const FHitResult& Hit)
 	{
 		if(RCRCharacterMovementComponent)
 		{
-			RCRCharacterMovementComponent->StartGrind(Hit, Cast<AGrindableRail>(Hit.GetActor())->SplineComponent, GetCapsuleComponent(), GetMesh(), this);
+			RCRCharacterMovementComponent->StartGrind(Hit, Cast<AGrindableRail>(Hit.GetActor())->SplineComponent, this);
 		}
 	}
 }
@@ -216,5 +224,5 @@ void ARhythmCityRushCharacter::SetCanMove(bool NewState)
 
 FVector2D ARhythmCityRushCharacter::GetMovementVector()
 {
-	return MovementVector;
+	return MovementInputVector;
 }

@@ -76,7 +76,14 @@ protected:
 	UPROPERTY()
 	bool bCanMove;
 
-	FVector2D MovementVector;
+	UPROPERTY(BlueprintReadWrite)
+	FVector2D MovementInputVector;
+
+	/**
+	* @brief Called on Move ETriggerCompleted to set MovementInputVector to (0, 0)
+	* when movement input stops.
+	*/
+	void MoveInputStopped();
 
 // Tagging
 
