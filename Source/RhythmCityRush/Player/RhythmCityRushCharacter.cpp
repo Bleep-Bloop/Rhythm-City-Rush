@@ -169,7 +169,7 @@ void ARhythmCityRushCharacter::Look(const FInputActionValue& Value)
 
 void ARhythmCityRushCharacter::TryTaggingWall()
 {
-	if(OccupiedTaggableActor && OccupiedTaggableActor->GetIsTagged() == false)
+	if(OccupiedTaggableActor && OccupiedTaggableActor->GetIsTagged() == false && CurrentSprayCans > 0)
 	{
 		// Get tag zone size
 		const EGrfTagSizes CurrentTagSize = OccupiedTaggableActor->GetTagZoneSize();
@@ -177,7 +177,9 @@ void ARhythmCityRushCharacter::TryTaggingWall()
 		// Get random size from tagging system component
 		UMaterialInstance* GrfTagToSpawn = TaggingSystemComponent->GetRandomGrfTag(CurrentTagSize);
 		
-		OccupiedTaggableActor->TagWall(GrfTagToSpawn);
+		if(OccupiedTaggableActor->TagWall(GrfTagToSpawn))
+			UseSprayCan();
+		
 	}
 }
 
