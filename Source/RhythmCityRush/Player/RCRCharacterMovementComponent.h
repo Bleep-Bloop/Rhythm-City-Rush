@@ -86,7 +86,7 @@ public:
 	bool WallRidingIsRight() const { return bWallRideIsRight; }
 
 	// Call the BP Implemented Grind from GrindControllerComponent
-	void StartGrind(FHitResult LandingHit, USplineComponent* RailSpline, UCapsuleComponent* CapsuleComponent, USkeletalMeshComponent* SkeletalMesh, ACharacter* PlayerChar) const;
+	void StartGrind(FHitResult LandingHit, USplineComponent* RailSpline, ARhythmCityRushCharacter* PlayerChar);
 
 private:
 	// Returns owner's capsule component's scaled radius/

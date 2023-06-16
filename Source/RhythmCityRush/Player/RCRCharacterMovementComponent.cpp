@@ -266,11 +266,11 @@ void URCRCharacterMovementComponent::PhysWallRide(float deltaTime, int32 Iterati
 		SetMovementMode(MOVE_Falling);
 }
 
-void URCRCharacterMovementComponent::StartGrind(FHitResult LandingHit, USplineComponent* RailSpline, UCapsuleComponent* CapsuleComponent, USkeletalMeshComponent* SkeletalMesh, ACharacter* PlayerChar) const
+void URCRCharacterMovementComponent::StartGrind(FHitResult LandingHit, USplineComponent* RailSpline, ARhythmCityRushCharacter* PlayerChar)
 {
 	if(GrindControllerComponent)
 	{
-		GrindControllerComponent->Grind(LandingHit, RailSpline, CapsuleComponent, SkeletalMesh, PlayerChar);
+		GrindControllerComponent->Grind(LandingHit, RailSpline, PlayerChar);
 	}
 }
 

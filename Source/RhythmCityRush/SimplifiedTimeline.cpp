@@ -105,7 +105,7 @@ void USimplifiedTimeline::Reverse()
         }
     }
 }
- 
+
 void USimplifiedTimeline::UpdateTimer()
 {
     if (!bIsPlaying)
@@ -146,4 +146,12 @@ void USimplifiedTimeline::UpdateTimer()
         Stop();
         OnTimerFinished.Broadcast(CurrentValue, CurrentDirection);      
     }
+}
+
+void USimplifiedTimeline::SkipToEnd()
+{
+    CurrTime = CurveEndTime;
+    Stop();
+    OnTimerFinished.Broadcast(CurrentValue, CurrentDirection);
+    
 }

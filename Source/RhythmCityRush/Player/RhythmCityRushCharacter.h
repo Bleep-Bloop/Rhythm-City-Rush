@@ -12,7 +12,7 @@
 #include "RhythmCityRush/InteractableEnvironment/TaggableActor.h"
 #include "RhythmCityRushCharacter.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class RHYTHMCITYRUSH_API ARhythmCityRushCharacter : public ACharacter
 {
 	GENERATED_BODY()
@@ -76,7 +76,14 @@ protected:
 	UPROPERTY()
 	bool bCanMove;
 
-	FVector2D MovementVector;
+	UPROPERTY(BlueprintReadWrite)
+	FVector2D MovementInputVector;
+
+	/**
+	* @brief Called on Move ETriggerCompleted to set MovementInputVector to (0, 0)
+	* when movement input stops.
+	*/
+	void MoveInputStopped();
 
 // Tagging
 

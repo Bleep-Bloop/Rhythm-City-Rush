@@ -4,11 +4,7 @@
     <projectFile>RhythmCityRush.uproject</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fc962d2-5314-4ec6-a65a-8699445a6fae" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BP_RhythmCityRushCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP_RhythmCityRushCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Player/RhythmCityRushCharacter.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="6fc962d2-5314-4ec6-a65a-8699445a6fae" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,6 +92,7 @@
       <workItem from="1686727146775" duration="16198000" />
       <workItem from="1686767290278" duration="30987000" />
       <workItem from="1686826788718" duration="61000" />
+      <workItem from="1686832525598" duration="7661000" />
     </task>
     <servers />
   </component>
