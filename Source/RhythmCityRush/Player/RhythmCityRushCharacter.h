@@ -12,7 +12,7 @@
 #include "RhythmCityRush/InteractableEnvironment/TaggableActor.h"
 #include "RhythmCityRushCharacter.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class RHYTHMCITYRUSH_API ARhythmCityRushCharacter : public ACharacter
 {
 	GENERATED_BODY()
