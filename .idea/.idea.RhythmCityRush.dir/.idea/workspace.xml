@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fc962d2-5314-4ec6-a65a-8699445a6fae" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Enemies/BP_ChaseEnemy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Enemies/BP_ChaseEnemy.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RhythmCityRush.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/RhythmCityRush.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Enemies/ChaseEnemyController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Enemies/ChaseEnemyController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Enemies/ChaseEnemyController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Enemies/ChaseEnemyController.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +101,7 @@
       <workItem from="1686894308831" duration="1052000" />
       <workItem from="1686896273312" duration="4019000" />
       <workItem from="1686907932454" duration="1439000" />
-      <workItem from="1686921957613" duration="1754000" />
+      <workItem from="1686921957613" duration="2519000" />
     </task>
     <servers />
   </component>

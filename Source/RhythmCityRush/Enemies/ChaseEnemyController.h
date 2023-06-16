@@ -13,5 +13,21 @@ UCLASS()
 class RHYTHMCITYRUSH_API AChaseEnemyController : public AAIController
 {
 	GENERATED_BODY()
+
+public:
+
+	virtual void BeginPlay() override;
+	
+private:
+
+	UPROPERTY(VisibleAnywhere)
+	class UNavigationSystemV1* NavArea;
+
+	FVector RandomLocation;
+
+public:
+
+	UFUNCTION()
+	void RandomPatrol();
 	
 };
