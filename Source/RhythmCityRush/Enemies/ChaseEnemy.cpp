@@ -19,7 +19,7 @@ AChaseEnemy::AChaseEnemy()
 	PlayerAttackCollisionDetection->SetupAttachment(RootComponent);
 
 	DamageCollision = CreateDefaultSubobject<UBoxComponent>("Damage Collision");
-	DamageCollision->SetupAttachment(RootComponent);
+	DamageCollision->SetupAttachment(RootComponent); // ToDo: Connect to socket when animated
 
 }
 
