@@ -3,11 +3,23 @@
 
 #include "ChaseEnemy.h"
 
+#include "Components/BoxComponent.h"
+#include "Components/SphereComponent.h"
+
 // Sets default values
 AChaseEnemy::AChaseEnemy()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	PlayerCollisionDetection = CreateDefaultSubobject<USphereComponent>("Player Collision Detection");
+	PlayerCollisionDetection->SetupAttachment(RootComponent);
+
+	PlayerAttackCollisionDetection = CreateDefaultSubobject<USphereComponent>("Player Attack Collision Detection");
+	PlayerAttackCollisionDetection->SetupAttachment(RootComponent);
+
+	DamageCollision = CreateDefaultSubobject<UBoxComponent>("Damage Collision");
+	DamageCollision->SetupAttachment(RootComponent);
 
 }
 
