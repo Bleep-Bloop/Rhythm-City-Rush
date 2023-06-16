@@ -128,9 +128,17 @@ public:
 	FVector2D GetMovementVector();
 
 // Spray Cans
-	
+
+	/**
+	 * @brief Adds 1 to CurrentSprayCans if less than MaxSprayCans.
+	 * @return true - 1 was added to CurrentSprayCans.
+	 */
 	bool PickupSprayCan();
 
+	/**
+	 * @brief Subtracts 1 from CurrentSprayCans if greater than 0.
+	 * @return true - 1 was subtracted from CurrentSprayCans.
+	 */
 	bool UseSprayCan();
 	
 };
