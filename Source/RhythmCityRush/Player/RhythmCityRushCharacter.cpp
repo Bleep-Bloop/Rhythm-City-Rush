@@ -8,6 +8,8 @@
 #include "RCRCharacterMovementComponent.h"
 #include "Engine/DecalActor.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "RhythmCityRush/GameModes/RCRGameMode_TimeTrial.h"
 #include "RhythmCityRush/InteractableEnvironment/GrindableRail.h"
 
 ARhythmCityRushCharacter::ARhythmCityRushCharacter(const FObjectInitializer& ObjectInitializer)
@@ -178,8 +180,11 @@ void ARhythmCityRushCharacter::TryTaggingWall()
 		UMaterialInstance* GrfTagToSpawn = TaggingSystemComponent->GetRandomGrfTag(CurrentTagSize);
 		
 		if(OccupiedTaggableActor->TagWall(GrfTagToSpawn))
+		{
 			UseSprayCan();
-		
+			// Check all TaggedSpots in level.
+			Cast<ARCRGameMode_TimeTrial>(UGameplayStatics::GetGameMode(GetWorld()))->CheckTimeTrialProgress();
+		}
 	}
 }
 
