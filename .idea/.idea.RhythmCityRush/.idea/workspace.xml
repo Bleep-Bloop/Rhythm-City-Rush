@@ -7,8 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="169e494c-e87b-474e-ad8f-0e024472a3d5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/GameModes/RCRGameMode_TimeTrial.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/GameModes/RCRGameMode_TimeTrial.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/GameModes/RCRGameMode_TimeTrial.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/GameModes/RCRGameMode_TimeTrial.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,6 +164,7 @@
       <workItem from="1684693606686" duration="2911000" />
       <workItem from="1684781939746" duration="321000" />
       <workItem from="1686909427503" duration="4486000" />
+      <workItem from="1686927585968" duration="2608000" />
     </task>
     <servers />
   </component>
