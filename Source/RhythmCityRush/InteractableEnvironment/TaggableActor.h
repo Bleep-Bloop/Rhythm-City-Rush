@@ -33,7 +33,7 @@ protected:
 	UPROPERTY(EditAnywhere)
 	TEnumAsByte<EGrfTagSizes> TagSize;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(BlueprintReadWrite)
 	bool bIsTagged;
 	
 public:	

@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6fc962d2-5314-4ec6-a65a-8699445a6fae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RhythmCityRush.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Enemies/ChaseEnemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Enemies/ChaseEnemy.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RhythmCityRush/Enemies/ChaseEnemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RhythmCityRush/Enemies/ChaseEnemy.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEditor.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEditor.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/BP_GrindControllerComponent.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP_GrindControllerComponent.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/BP_TaggableWall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP_TaggableWall.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GrindTimelineCurve.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GrindTimelineCurve.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Pickups/BP_SprayCan.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Pickups/BP_SprayCan.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +104,7 @@
       <workItem from="1686896273312" duration="4019000" />
       <workItem from="1686907932454" duration="1439000" />
       <workItem from="1686921957613" duration="3137000" />
+      <workItem from="1687371679714" duration="1304000" />
     </task>
     <servers />
   </component>
