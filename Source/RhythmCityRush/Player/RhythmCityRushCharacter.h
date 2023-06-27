@@ -12,6 +12,8 @@
 #include "RhythmCityRush/InteractableEnvironment/TaggableActor.h"
 #include "RhythmCityRushCharacter.generated.h"
 
+DECLARE_DELEGATE_OneParam(FOnSprayCansChanged, float);
+
 UCLASS(Blueprintable)
 class RHYTHMCITYRUSH_API ARhythmCityRushCharacter : public ACharacter
 {
@@ -37,6 +39,8 @@ protected:
 
 public:
 
+	FOnSprayCansChanged OnSprayCansChangedDelegate;
+
 	ARhythmCityRushCharacter(const FObjectInitializer& ObjectInitializer);
 	
 	// Called every frame
@@ -44,6 +48,8 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	void UpdateSprayCans();
 
 protected:
 
@@ -101,10 +107,10 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Spray Cans")
 	int MaxSprayCans;
 
+public:
+
 	UPROPERTY(VisibleAnywhere, Category = "Spray Cans")
 	int CurrentSprayCans;
-
-public:
 
 	// Sets OccupiedTaggableActor to given TaggableActor, called from TaggableActor::OnOverlapBegin. 
 	void EnterTagZone(ATaggableActor* CurrentTagZone);

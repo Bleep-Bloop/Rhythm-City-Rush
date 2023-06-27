@@ -112,6 +112,14 @@ void ARhythmCityRushCharacter::SetupPlayerInputComponent(UInputComponent* Player
 	}
 }
 
+void ARhythmCityRushCharacter::UpdateSprayCans()
+{
+	if(OnSprayCansChangedDelegate.IsBound())
+	{
+		OnSprayCansChangedDelegate.Execute(CurrentSprayCans);
+	}
+}
+
 void ARhythmCityRushCharacter::Move(const FInputActionValue& Value)
 {
 
